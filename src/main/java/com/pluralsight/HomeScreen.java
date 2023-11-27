@@ -79,26 +79,43 @@ class OrderMenu {
 
                     Sandwich sandwich = new Sandwich(size,bread,bool);
                    customerOrder.sandwiches.add(sandwich);
-                   System.out.println("These are our meat toppings");
 
+                 //Meat Choice
+                   System.out.println("These are our meat toppings");
                    for( int i = 1; i < meatToppings.size() + 1 ; i++){
                        System.out.println(i+ ":" + meatToppings.get(i - 1));
-
                    }
+                    int meatChoice = order.nextInt();
+                   order.nextLine();
+                   sandwich.toppings.add(meatToppings.get(meatChoice - 1 ));
 
+                 //Cheese Choice
                    System.out.println("These are our cheeses : " );
                     for( int i = 1; i < cheeseToppings.size() + 1 ; i++){
                         System.out.println(i+ ":" + cheeseToppings.get(i - 1));
                     }
+                    int cheeseChoice = order.nextInt();
+                   order.nextLine();
+                    sandwich.toppings.add(cheeseToppings.get(cheeseChoice - 1 ));
 
+                   //Vegetable Choice
                     System.out.println("These are our vegetable toppings : " );
                     for( int i = 1; i < vegToppings.size() + 1 ; i++){
                         System.out.println(i+ ":" + vegToppings.get(i - 1));
                     }
+                   int vegChoice = order.nextInt();
+                    order.nextLine();
+                    sandwich.toppings.add(vegToppings.get(vegChoice - 1 ));
+                    //Sauce choice
+
                     System.out.println("These are our sauces : ");
                     for( int i = 1; i < sideToppings.size() + 1 ; i++){
                         System.out.println(i+ ":" + sideToppings.get(i - 1));
                     }
+                    int sauceChoice = order.nextInt();
+                    order.nextLine();
+                    sandwich.toppings.add(sideToppings.get(sauceChoice - 1 ));
+
                     break;
                 case "2":
                     addDrink();
