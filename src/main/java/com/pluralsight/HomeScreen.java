@@ -55,6 +55,7 @@ class OrderMenu {
                     System.out.println("What size sandwich would you like?");
                     System.out.println("We have a 4 inch, 8 Inch, and 12 Inch.");
                     int size = order.nextInt();
+                    order.nextLine();
                     System.out.println("Which bread would you like?");
                     System.out.println("We have White, Wheat, Rye, and Wraps.");
                     String bread = order.nextLine().trim();
@@ -68,6 +69,9 @@ class OrderMenu {
                     }
                     System.out.println("What toppings would you like?");
 
+                    boolean extraMeat;
+                    boolean extraCheese;
+
                     List<String> meatToppings = Arrays.asList("Steak","Ham", "Salami", "Roast Beef","Chicken","Bacon");
                     List<String> cheeseToppings = Arrays.asList("American","Provolone", "Cheddar", "Swiss","Pepperjack");
                     List<String> vegToppings = Arrays.asList("Lettuce","Peppers", "Onions", "Tomatoes","Jalapenos","Cucumbers","Pickles","Guacamole","Mushrooms");
@@ -75,6 +79,26 @@ class OrderMenu {
 
                     Sandwich sandwich = new Sandwich(size,bread,bool);
                    customerOrder.sandwiches.add(sandwich);
+                   System.out.println("These are our meat toppings");
+
+                   for( int i = 1; i < meatToppings.size() + 1 ; i++){
+                       System.out.println(i+ ":" + meatToppings.get(i - 1));
+
+                   }
+
+                   System.out.println("These are our cheeses : " );
+                    for( int i = 1; i < cheeseToppings.size() + 1 ; i++){
+                        System.out.println(i+ ":" + cheeseToppings.get(i - 1));
+                    }
+
+                    System.out.println("These are our vegetable toppings : " );
+                    for( int i = 1; i < vegToppings.size() + 1 ; i++){
+                        System.out.println(i+ ":" + vegToppings.get(i - 1));
+                    }
+                    System.out.println("These are our sauces : ");
+                    for( int i = 1; i < sideToppings.size() + 1 ; i++){
+                        System.out.println(i+ ":" + sideToppings.get(i - 1));
+                    }
                     break;
                 case "2":
                     addDrink();
