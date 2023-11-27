@@ -41,7 +41,7 @@ class OrderMenu {
     public void run() {
         while (true) {
             Scanner order = new Scanner(System.in);
-           Order customerOrder = new Order();
+            Order customerOrder = new Order();
 
             System.out.println("What'll be your order?:");
             System.out.println("1. Add sandwich.");
@@ -53,9 +53,11 @@ class OrderMenu {
             switch (choice) {
                 case "1":
                     System.out.println("What size sandwich would you like?");
+
                     System.out.println("We have a 4 inch, 8 Inch, and 12 Inch.");
                     int size = order.nextInt();
                     order.nextLine();
+
                     System.out.println("Which bread would you like?");
                     System.out.println("We have White, Wheat, Rye, and Wraps.");
                     String bread = order.nextLine().trim();
@@ -64,7 +66,7 @@ class OrderMenu {
                     boolean bool;
                     if(yn.equalsIgnoreCase("Yes")){
                         bool = true;
-                }else{
+                    }else{
                         bool = false;
                     }
                     System.out.println("What toppings would you like?");
@@ -78,32 +80,47 @@ class OrderMenu {
                     List<String> sideToppings = Arrays.asList("Au Jus","Sauce");
 
                     Sandwich sandwich = new Sandwich(size,bread,bool);
-                   customerOrder.sandwiches.add(sandwich);
+                    customerOrder.sandwiches.add(sandwich);
 
-                 //Meat Choice
-                   System.out.println("These are our meat toppings");
-                   for( int i = 1; i < meatToppings.size() + 1 ; i++){
-                       System.out.println(i+ ":" + meatToppings.get(i - 1));
-                   }
-                    int meatChoice = order.nextInt();
-                   order.nextLine();
-                   sandwich.toppings.add(meatToppings.get(meatChoice - 1 ));
+                    //Meat Choice
+                    System.out.println("These are our meat toppings");
+                    for( int i = 1; i < meatToppings.size() + 1 ; i++){
+                        System.out.println(i+ ":" + meatToppings.get(i - 1));
+                    }
 
-                 //Cheese Choice
-                   System.out.println("These are our cheeses : " );
+                    int moreMeatToppings = 1;
+
+                    while(moreMeatToppings == 1){
+                        int meatChoice = order.nextInt();
+//                        order.nextLine();
+//
+                        sandwich.toppings.add(meatToppings.get(meatChoice - 1 ));
+
+                        System.out.println("Do you want more meat toppings?");
+                        System.out.println("1: Yes");
+                        System.out.println("2: No");
+
+                        moreMeatToppings = order.nextInt();
+//                        order.nextLine();
+                    }
+
+
+
+                    //Cheese Choice
+                    System.out.println("These are our cheeses : " );
                     for( int i = 1; i < cheeseToppings.size() + 1 ; i++){
                         System.out.println(i+ ":" + cheeseToppings.get(i - 1));
                     }
                     int cheeseChoice = order.nextInt();
-                   order.nextLine();
+                    order.nextLine();
                     sandwich.toppings.add(cheeseToppings.get(cheeseChoice - 1 ));
 
-                   //Vegetable Choice
+                    //Vegetable Choice
                     System.out.println("These are our vegetable toppings : " );
                     for( int i = 1; i < vegToppings.size() + 1 ; i++){
                         System.out.println(i+ ":" + vegToppings.get(i - 1));
                     }
-                   int vegChoice = order.nextInt();
+                    int vegChoice = order.nextInt();
                     order.nextLine();
                     sandwich.toppings.add(vegToppings.get(vegChoice - 1 ));
                     //Sauce choice
@@ -132,7 +149,10 @@ class OrderMenu {
                 default:
                     System.out.println("WRONG! STOP IT!");
                     break;
-            }}}
+
+            }
+        }
+    }
     private void addDrink() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Select your size:");
