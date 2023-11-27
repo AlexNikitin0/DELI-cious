@@ -132,6 +132,12 @@ public class Sandwich {
         totalPrice += cheesePrice;
     }
 
+    public double getTotalPrice(){
+        System.out.println(this.breadPrice + this.meatPrice + this.cheesePrice);
+        return this.breadPrice + this.meatPrice + this.cheesePrice;
+
+    }
+
     
 
 }
