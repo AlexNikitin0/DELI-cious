@@ -1,8 +1,6 @@
 package com.pluralsight;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
 //Import necessary functions.
 public class HomeScreen {
     private static final Scanner keyboard = new Scanner(System.in);
@@ -70,6 +68,10 @@ class OrderMenu {
                     }
                     System.out.println("What toppings would you like?");
 
+                    List<String> meatToppings = Arrays.asList("Steak","Ham", "Salami", "Roast Beef","Chicken","Bacon");
+                    List<String> cheeseToppings = Arrays.asList("American","Provolone", "Cheddar", "Swiss","Pepperjack");
+                    List<String> vegToppings = Arrays.asList("Lettuce","Peppers", "Onions", "Tomatoes","Jalapenos","Cucumbers","Pickles","Guacamole","Mushrooms");
+                    List<String> sideToppings = Arrays.asList("Au Jus","Sauce");
 
                     Sandwich sandwich = new Sandwich(size,bread,bool);
                    customerOrder.sandwiches.add(sandwich);
