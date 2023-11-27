@@ -38,11 +38,13 @@ class OrderMenu {
         this.customSandwich = new ArrayList<>();
         this.drinks = new ArrayList<>();
         this.chips = new ArrayList<>();
-        this.totalPrice = 0.0;
+        this.totalPrice = 0.00;
     }
     public void run() {
         while (true) {
             Scanner order = new Scanner(System.in);
+           Order customerOrder = new Order();
+
             System.out.println("What'll be your order?:");
             System.out.println("1. Add sandwich.");
             System.out.println("2. Add drink.");
@@ -52,7 +54,25 @@ class OrderMenu {
             String choice = order.nextLine();
             switch (choice) {
                 case "1":
-                    System.out.println("Redirecting to customize sandwich screen.");
+                    System.out.println("What size sandwich would you like?");
+                    System.out.println("We have a 4 inch, 8 Inch, and 12 Inch.");
+                    int size = order.nextInt();
+                    System.out.println("Which bread would you like?");
+                    System.out.println("We have White, Wheat, Rye, and Wraps.");
+                    String bread = order.nextLine().trim();
+                    System.out.println("Would you like that toasted?");
+                    String yn = order.nextLine().trim();
+                    boolean bool;
+                    if(yn.equalsIgnoreCase("Yes")){
+                        bool = true;
+                }else{
+                        bool = false;
+                    }
+                    System.out.println("What toppings would you like?");
+
+
+                    Sandwich sandwich = new Sandwich(size,bread,bool);
+                   customerOrder.sandwiches.add(sandwich);
                     break;
                 case "2":
                     addDrink();
@@ -125,7 +145,8 @@ class OrderMenu {
         //This is where the details will go
         System.out.println("Drinks: " + drinks);
         System.out.println("Chips: " + chips);
-        System.out.println("Total Price: $" + totalPrice);
+        System.out.printf("Total Price: $ %.2f" , totalPrice);
+        System.out.println();
         //Here's where the total price will be displayed
         System.out.println("Thank you for coming in! Now get out. There's a fee if you stand around.");
         System.exit(0);
