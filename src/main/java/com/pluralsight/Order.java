@@ -8,7 +8,9 @@ public class Order {
     ArrayList<Sandwich> sandwiches;
     public Order() {
         this.total = 0;
-        getTotal();
+        this.sandwiches = new ArrayList<Sandwich>();
+
+      //  getTotal();
     }
 
 
