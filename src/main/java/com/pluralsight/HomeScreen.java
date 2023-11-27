@@ -90,7 +90,7 @@ class OrderMenu {
             System.out.println("1. Coke.");
             System.out.println("2. Pepsi.");
             System.out.println("3. Fanta.");
-            System.out.println("4. Cheerwine.");
+            System.out.println("4. CheerWine.");
             System.out.println("5. A&W.");
             System.out.println("6. Bleach.");
             System.out.print("What'll it be?: ");
@@ -101,7 +101,7 @@ class OrderMenu {
             totalPrice += drinkPrice;
             System.out.println("Added. Size: " + sizeChoice + ", Price: $" + drinkPrice);
         } else {
-            System.out.println("You're embarassing yourself, KNOCK IT OFF BOZO!");
+            System.out.println("You're embarrassing yourself, KNOCK IT OFF BOZO!");
         }}
     private void addChips() {
         Scanner keyboard = new Scanner(System.in);
@@ -109,7 +109,7 @@ class OrderMenu {
         System.out.println("Your chip selection:");
         System.out.println("1. Doritos.");
         System.out.println("2. Sun Chips.");
-        System.out.println("3. Funyuns.");
+        System.out.println("3. Fun-Yuns.");
         System.out.println("4. Cheetos.");
         System.out.println("5. Lays.");
         System.out.println("6. Organic kind that nobody buys.");
