@@ -278,6 +278,3 @@ class OrderMenu {
 
 //Since you got to the bottom of the code, here's a fun fact
 //There's more stars in the observable universe than grains of sand on every beach on Earth.
-
-
-

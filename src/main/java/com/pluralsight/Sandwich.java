@@ -3,7 +3,7 @@ package com.pluralsight;
 import java.util.ArrayList;
 
 public class Sandwich {
-   ArrayList<String> toppings;
+    ArrayList<String> toppings;
 
     //properties
     private int size; // size of sandwich in inches. Options: 4,8,12
@@ -14,7 +14,7 @@ public class Sandwich {
     private double meatPrice;
     private double totalPrice;
     private double cheesePrice;
-    private boolean isExtraMeat,isExtraCheese;
+    private boolean isExtraMeat, isExtraCheese;
 
     public boolean isExtraMeat() {
         return isExtraMeat;
@@ -71,78 +71,68 @@ public class Sandwich {
     }
 
     public void setBreadPrice() {
-       if(this.size == 4){
+        if (this.size == 4) {
             this.breadPrice = 5.50;
-       }
-       else if(this.size == 8){
-           this.breadPrice = 7;
-       }
-       else {
-           this.breadPrice = 8.50;
+        } else if (this.size == 8) {
+            this.breadPrice = 7;
+        } else {
+            this.breadPrice = 8.50;
         }
 
 
     }
 
-    public void setMeatPrice(){
-        if(this.size == 4){
+    public void setMeatPrice() {
+        if (this.size == 4) {
             this.meatPrice = 1;
-        }
-        else if(this.size == 8){
+        } else if (this.size == 8) {
             this.meatPrice = 2;
-        }
-        else{
+        } else {
             meatPrice = 3;
         }
 
-        if(this.size == 4 && isExtraMeat){
+        if (this.size == 4 && isExtraMeat) {
             this.meatPrice += .50;
-        }
-        else if(this.size == 8 && isExtraMeat){
+        } else if (this.size == 8 && isExtraMeat) {
             this.meatPrice += 1;
-        }
-        else if(this.size == 12 && isExtraMeat){
+        } else if (this.size == 12 && isExtraMeat) {
             this.meatPrice += 1.5;
         }
     }
 
-    public void addMeatPrice(){
+    public void addMeatPrice() {
         totalPrice += meatPrice;
     }
 
-    public void setCheesePrice(){
-        if(this.size == 4){
+    public void setCheesePrice() {
+        if (this.size == 4) {
             this.cheesePrice = .75;
-        }
-        else if(this.size == 8){
+        } else if (this.size == 8) {
             this.cheesePrice = 1.5;
-        }
-        else{
+        } else {
             cheesePrice = 2.25;
         }
 
-        if(this.size == 4 && isExtraCheese){
+        if (this.size == 4 && isExtraCheese) {
             cheesePrice += .30;
-        }
-        else if(this.size == 8 && isExtraCheese){
+        } else if (this.size == 8 && isExtraCheese) {
             cheesePrice += .6;
 
-        }
-        else if(this.size == 12 && isExtraCheese){
+        } else if (this.size == 12 && isExtraCheese) {
             cheesePrice += .9;
         }
 
     }
-    public void addCheesePrice(){
+
+    public void addCheesePrice() {
         totalPrice += cheesePrice;
     }
 
-    public double getTotalPrice(){
+    public double getTotalPrice() {
         System.out.println(this.breadPrice + this.meatPrice + this.cheesePrice);
         return this.breadPrice + this.meatPrice + this.cheesePrice;
 
     }
 
-    
 
 }

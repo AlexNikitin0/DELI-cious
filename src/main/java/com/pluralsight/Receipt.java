@@ -31,13 +31,13 @@ public class Receipt {
 
                 System.out.println("Your receipt says: " + line);
             }
-                reader.close();
+            reader.close();
         }catch (IOException e){
             e.getStackTrace();
 
 
+        }
     }
-}
 
 
 }
