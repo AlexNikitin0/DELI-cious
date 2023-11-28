@@ -1,6 +1,10 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
+
 public class Sandwich {
+    ArrayList<String> toppings;
+
     //properties
     private int size; // size of sandwich in inches. Options: 4,8,12
     private String bread; // options: white,wheat,rye, or wrap
@@ -32,6 +36,7 @@ public class Sandwich {
         this.size = size;
         this.bread = bread;
         this.isToasted = isToasted;
+        this.toppings = new ArrayList<String>();
         setBreadPrice();
         setCheesePrice();
         setMeatPrice();
@@ -66,14 +71,14 @@ public class Sandwich {
     }
 
     public void setBreadPrice() {
-       if(this.size == 4){
+        if(this.size == 4){
             this.breadPrice = 5.50;
-       }
-       else if(this.size == 8){
-           this.breadPrice = 7;
-       }
-       else {
-           this.breadPrice = 8.50;
+        }
+        else if(this.size == 8){
+            this.breadPrice = 7;
+        }
+        else {
+            this.breadPrice = 8.50;
         }
 
 
@@ -132,6 +137,12 @@ public class Sandwich {
         totalPrice += cheesePrice;
     }
 
-    
+    public double getTotalPrice(){
+        System.out.println(this.breadPrice + this.meatPrice + this.cheesePrice);
+        return this.breadPrice + this.meatPrice + this.cheesePrice;
+
+    }
+
+
 
 }
