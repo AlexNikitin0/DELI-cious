@@ -3,7 +3,10 @@ package com.pluralsight;
 import java.util.ArrayList;
 
 public class Sandwich {
-    ArrayList<String> toppings;
+    ArrayList<String> meatToppings;
+    ArrayList<String> cheeseToppings;
+    ArrayList<String> vegetableToppings;
+    ArrayList<String> sideToppings;
 
     //properties
     private int size; // size of sandwich in inches. Options: 4,8,12
@@ -36,7 +39,15 @@ public class Sandwich {
         this.size = size;
         this.bread = bread;
         this.isToasted = isToasted;
-        this.toppings = new ArrayList<String>();
+        this.isExtraMeat = false;
+        this.isExtraCheese = false;
+
+
+        this.meatToppings = new ArrayList<String>();
+        this.cheeseToppings = new ArrayList<String>();
+        this.vegetableToppings = new ArrayList<String>();
+        this.sideToppings = new ArrayList<String>();
+
         setBreadPrice();
         setCheesePrice();
         setMeatPrice();
@@ -90,29 +101,24 @@ public class Sandwich {
         } else {
             meatPrice = 3;
         }
-
-        if (this.size == 4 && isExtraMeat) {
-            this.meatPrice += .50;
-        } else if (this.size == 8 && isExtraMeat) {
-            this.meatPrice += 1;
-        } else if (this.size == 12 && isExtraMeat) {
-            this.meatPrice += 1.5;
-        }
     }
 
     public void addMeatPrice() {
         totalPrice += meatPrice;
     }
+    public void extraMeat() {
+        this.isExtraMeat = true;
+        if (this.size == 4 && isExtraMeat) {
+            meatPrice += .50;
+        } else if (this.size == 8 && isExtraMeat) {
+            meatPrice += 1;
 
-    public void setCheesePrice() {
-        if (this.size == 4) {
-            this.cheesePrice = .75;
-        } else if (this.size == 8) {
-            this.cheesePrice = 1.5;
-        } else {
-            cheesePrice = 2.25;
+        } else if (this.size == 12 && isExtraMeat) {
+            meatPrice += 1.50;
         }
-
+    }
+    public void extraCheese() {
+        this.isExtraCheese = true;
         if (this.size == 4 && isExtraCheese) {
             cheesePrice += .30;
         } else if (this.size == 8 && isExtraCheese) {
@@ -121,7 +127,15 @@ public class Sandwich {
         } else if (this.size == 12 && isExtraCheese) {
             cheesePrice += .9;
         }
-
+    }
+    public void setCheesePrice() {
+        if (this.size == 4) {
+            this.cheesePrice = .75;
+        } else if (this.size == 8) {
+            this.cheesePrice = 1.5;
+        } else {
+            cheesePrice = 2.25;
+        }
     }
 
     public void addCheesePrice() {
