@@ -147,7 +147,5 @@ public class Sandwich {
         return this.breadPrice + this.meatPrice + this.cheesePrice;
 
     }
-    public void setToppings(ArrayList<String> toppings) {
-        this.toppings = toppings;
+
     }
-}
