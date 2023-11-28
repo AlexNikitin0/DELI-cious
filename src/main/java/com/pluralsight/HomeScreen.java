@@ -1,4 +1,5 @@
 package com.pluralsight;
+import java.io.IOException;
 import java.util.*;
 
 //Import necessary functions.
@@ -6,7 +7,7 @@ import java.util.*;
 public class HomeScreen {
 
     private static final Scanner keyboard = new Scanner(System.in);
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         System.out.println("Welcome to the best possible iteration of Deli-Cious!");
         //Project strong confidence in the business.
@@ -42,7 +43,7 @@ class OrderMenu {
         this.chips = new ArrayList<>();
         this.totalPrice = 0.00;
     }
-    public void run() {
+    public void run() throws IOException {
         System.out.println("What'll be your order?:");
 
         while (true) {
@@ -325,7 +326,7 @@ class OrderMenu {
         customerOrder.chips.add(chip.get(chipChoice - 1));
 
     }
-    private void checkout() {
+    private void checkout() throws IOException {
         System.out.println("Order Details: ");
         //This is where the details will go
         System.out.print("Drinks: ");
@@ -342,6 +343,8 @@ class OrderMenu {
         System.out.println();
         //Here's where the total price will be displayed
         System.out.println("Thank you for coming in! Now get out. There's a fee if you stand around.");
+        Receipt receipt = new Receipt();
+        receipt.write(customerOrder);
         System.exit(0);
     }
 }

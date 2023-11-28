@@ -148,5 +148,56 @@ public class Sandwich {
         System.out.println(this.breadPrice + this.meatPrice + this.cheesePrice);
         return this.breadPrice + this.meatPrice + this.cheesePrice;
 
-    }}
+    }
+
+    public String displayMeat(){
+        StringBuilder builder = new StringBuilder();
+        for(String meat:meatToppings){
+            builder.append(meat + " ");
+
+        }
+
+        return builder.toString();
+    }
+
+    public String displayCheese(){
+        StringBuilder builder = new StringBuilder();
+        for(String cheese:cheeseToppings){
+            builder.append(cheese + " ");
+
+        }
+
+        return builder.toString();
+    }
+
+    public String displayVeg(){
+        StringBuilder builder = new StringBuilder();
+        for(String veg:vegetableToppings){
+            builder.append(veg + " ");
+
+        }
+
+        return builder.toString();
+    }
+
+    public String displaySauce(){
+        StringBuilder builder = new StringBuilder();
+        for(String sauce:sauceToppings){
+            builder.append(sauce + " ");
+
+        }
+
+        return builder.toString();
+    }
+    public String displaySides(){
+        StringBuilder builder = new StringBuilder();
+        for(String side:sideToppings){
+            builder.append(side + " ");
+
+        }
+
+        return builder.toString();
+    }
+
+}
 
