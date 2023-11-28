@@ -148,10 +148,5 @@ public class Sandwich {
         System.out.println(this.breadPrice + this.meatPrice + this.cheesePrice);
         return this.breadPrice + this.meatPrice + this.cheesePrice;
 
-    }
-<<<<<<< HEAD
-}
-=======
+    }}
 
-    }
->>>>>>> 458981da0a534824df732e573113d721c6fa3a43
