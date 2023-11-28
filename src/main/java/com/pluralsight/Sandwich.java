@@ -7,6 +7,7 @@ public class Sandwich {
     ArrayList<String> cheeseToppings;
     ArrayList<String> vegetableToppings;
     ArrayList<String> sideToppings;
+    ArrayList<String> sauceToppings;
 
     //properties
     private int size; // size of sandwich in inches. Options: 4,8,12
@@ -47,6 +48,7 @@ public class Sandwich {
         this.cheeseToppings = new ArrayList<String>();
         this.vegetableToppings = new ArrayList<String>();
         this.sideToppings = new ArrayList<String>();
+        this.sauceToppings = new ArrayList<String>();
 
         setBreadPrice();
         setCheesePrice();
@@ -147,5 +149,4 @@ public class Sandwich {
         return this.breadPrice + this.meatPrice + this.cheesePrice;
 
     }
-
 }
