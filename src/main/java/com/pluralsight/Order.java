@@ -19,23 +19,30 @@ public class Order {
         sandwiches.add(sandwich);
 
     }
-    public void getTotal(){
-        for (Sandwich sandwich: sandwiches) {
+    public void setDrinkorChipTotal(double amount){
+
+        this.total += amount;
+    }
+
+    public void setSandwichPrices(){
+        for(Sandwich sandwich: sandwiches){
             this.total += sandwich.getTotalPrice();
         }
     }
 
-    public void addDrink(String size){
-        if (size.equalsIgnoreCase("small")){
-            this.total += 2;
-        } else if (size.equalsIgnoreCase("medium")) {
-            this.total += 2.50;
-        } else {
-            this.total += 3.00;
-        }
 
 
-    }
+//    public void addDrink(String size){
+//        if (size.equalsIgnoreCase("small")){
+//            this.total += 2;
+//        } else if (size.equalsIgnoreCase("medium")) {
+//            this.total += 2.50;
+//        } else {
+//            this.total += 3.00;
+//        }
+//
+//
+//    }
 
 
 }
