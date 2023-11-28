@@ -6,9 +6,13 @@ public class Order {
     double total;
 
     ArrayList<Sandwich> sandwiches;
+    ArrayList<String> drinks;
+    ArrayList<String> chips;
     public Order() {
         this.total = 0;
         this.sandwiches = new ArrayList<Sandwich>();
+        this.drinks = new ArrayList<String>();
+        this.chips = new ArrayList<String>();
 
         //  getTotal();
     }

@@ -275,9 +275,9 @@ class OrderMenu {
         String sizeChoice = keyboard.nextLine();
         Map<String, Double> drinkPrices = new HashMap<>();
 //Logic for prices.
-        drinkPrices.put("1", 2.00);
-        drinkPrices.put("2", 2.50);
-        drinkPrices.put("3", 3.00);
+        drinkPrices.put("1", 2.0);
+        drinkPrices.put("2", 2.5);
+        drinkPrices.put("3", 3.0);
 //Your options, monsieur.
         if (drinkPrices.containsKey(sizeChoice)) {
             System.out.println("Select a drink:");
@@ -288,12 +288,16 @@ class OrderMenu {
             System.out.println("5. A&W.");
             System.out.println("6. Bleach.");
             System.out.print("What'll it be?: ");
-            String drinkChoice = keyboard.nextLine();
+            int drinkChoice = keyboard.nextInt();
+            List<String> drinks =  Arrays.asList("Coke","Pepsi","Fanta","CheerWine","A&W","Bleach");
+            customerOrder.drinks.add(drinks.get(drinkChoice - 1));//add to array for display later
+
             //Calculate the drank price.
-            drinks.add(drinkChoice);
+
             double drinkPrice = drinkPrices.get(sizeChoice);
             customerOrder.setDrinkorChipTotal(drinkPrice);
-            System.out.println("Added. Size: " + sizeChoice + ", Price: $" + drinkPrice);
+            System.out.printf(" Price: $ %.2f" , drinkPrice);
+            System.out.println();
         } else {
             System.out.println("You're embarrassing yourself, KNOCK IT OFF BOZO!");
         }}
@@ -308,18 +312,32 @@ class OrderMenu {
         System.out.println("5. Lays.");
         System.out.println("6. Organic kind that nobody buys.");
         System.out.print("What'll it be?: ");
-        //Logic below for adding chips
-        String chipsChoice = keyboard.nextLine();
+        int chipChoice = keyboard.nextInt();
+                //Logic below for adding chips
+
         double chipPrice = 1.50;
-        chips.add(chipsChoice);
+
         customerOrder.setDrinkorChipTotal(chipPrice);
+
         System.out.println("Chips added.");
+
+        List<String> chip =  Arrays.asList("Doritos","Sun Chips","Fun-Yuns","Cheetos","Lays","Organic kind that nobody buys");
+        customerOrder.chips.add(chip.get(chipChoice - 1));
+
     }
     private void checkout() {
-        System.out.println("Order Details:");
+        System.out.println("Order Details: ");
         //This is where the details will go
-        System.out.println("Drinks: " + drinks.size());
-        System.out.println("Chips: " + chips.size());
+        System.out.print("Drinks: ");
+        for(String drinks:customerOrder.drinks){
+            System.out.println(drinks);
+        }
+
+        System.out.print("Chips: ");
+        for(String chips:customerOrder.chips){
+            System.out.println(chips);
+        }
+
         System.out.printf("Total Price: $ %.2f" , customerOrder.total);
         System.out.println();
         //Here's where the total price will be displayed
