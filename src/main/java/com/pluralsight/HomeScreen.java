@@ -115,7 +115,7 @@ class OrderMenu {
 
                     while(moreCheeseToppings == 1){
 
-                        System.out.println("These be the cheeses!!gt");
+                        System.out.println("These be the cheeses!!");
                         for( int i = 1; i <cheeseToppings.size() + 1 ; i++){
                             System.out.println(i+ ":" + cheeseToppings.get(i - 1));
                         }
