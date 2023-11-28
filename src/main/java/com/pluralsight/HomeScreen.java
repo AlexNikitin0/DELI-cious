@@ -69,56 +69,74 @@ class OrderMenu {
                     }else{
                         bool = false;
                     }
-                    System.out.println("What toppings would you like?");
+
 
                     boolean extraMeat;
                     boolean extraCheese;
 
-                    List<String> meatToppings = Arrays.asList("Steak","Ham", "Salami", "Roast Beef","Chicken","Bacon","No Meat");
-                    List<String> cheeseToppings = Arrays.asList("American","Provolone", "Cheddar", "Swiss","Pepperjack");
-                    List<String> vegToppings = Arrays.asList("Lettuce","Peppers", "Onions", "Tomatoes","Jalapenos","Cucumbers","Pickles","Guacamole","Mushrooms");
-                    List<String> sideToppings = Arrays.asList("Au Jus","Sauce");
+                    List<String> meatToppings = Arrays.asList("Steak","Ham", "Salami", "Roast Beef","Chicken","Bacon","Continue to cheese");
+                    List<String> cheeseToppings = Arrays.asList("American","Provolone", "Cheddar", "Swiss","PepperJack","No Cheese","Continue to vegetables");
+                    List<String> vegToppings = Arrays.asList("Lettuce","Peppers", "Onions", "Tomatoes","Jalapenos","Cucumbers","Pickles","Guacamole","Mushrooms","No Veggies","Continue to sauces");
+                    List<String> sauces = Arrays.asList("Mayo","Mustard", "Ketchup", "Ranch","Thousand Islands","Vinaigrette","No sauces", "Continue to sides");
+                    List<String> sideToppings = Arrays.asList("Au Jus","sauce","No sides");
                     Sandwich sandwich = new Sandwich(size,bread,bool);
 
 
                     //Meat Choice
-                    int moreMeatToppings = 1;
 
-                    while(moreMeatToppings != 7){
-                        if (moreMeatToppings <= 6){
-                            System.out.println("These are our meat toppings");
-                            for( int i = 1; i < meatToppings.size() + 1 ; i++){
-                                System.out.println(i+ ":" + meatToppings.get(i - 1));
+                    int userChoice = 0;
+                    System.out.println("Would like meat on your sandwich?");
+                    System.out.println("1: Yes");
+                    System.out.println("2: No");
+                    userChoice = order.nextInt();
+                    order.nextLine();
+                    if (userChoice == 1){        int moreMeatToppings = 1;
+
+                        while(moreMeatToppings != 7){
+                            if (moreMeatToppings <= 6){
+                                System.out.println("These are our meat toppings");
+                                for( int i = 1; i < meatToppings.size() + 1 ; i++){
+                                    System.out.println(i+ ":" + meatToppings.get(i - 1));
+                                }
+
+                                moreMeatToppings = order.nextInt();
+                                order.nextLine();
+                                if (sandwich.meatToppings.size() > 0){
+                                    sandwich.extraMeat();
+                                }
+                                sandwich.meatToppings.add(meatToppings.get(moreMeatToppings - 1 ));
+                            }
+                            if(sandwich.meatToppings.contains("Continue to cheese")){
+                                sandwich.meatToppings.remove(sandwich.meatToppings.size() -1);
+                            }
+                            System.out.println(sandwich.meatToppings);
+                        }}
+
+
+
+                    //Cheese Choice
+                    int moreCheeseToppings = 1;
+
+                    while(moreCheeseToppings != 6){
+                        if (moreCheeseToppings <= 7) {
+                            System.out.println("These be the cheeses!!");
+                            for (int i = 1; i < cheeseToppings.size() + 1; i++) {
+                                System.out.println(i + ":" + cheeseToppings.get(i - 1));
                             }
 
-                             moreMeatToppings = order.nextInt();
+                            moreCheeseToppings = order.nextInt();
                             order.nextLine();
 
-                            sandwich.toppings.add(meatToppings.get(moreMeatToppings - 1 ));
+                            sandwich.cheeseToppings.add(cheeseToppings.get(moreCheeseToppings - 1));
+
+
+                            System.out.println("Do you want more cheese toppings?");
+                            System.out.println("1: Yes");
+                            System.out.println("2: No");
+
+                            moreCheeseToppings = order.nextInt();
+                            order.nextLine();
                         }
-                    }
-                    //Cheese Choice
-                    int moreCheeseToppings= 1;
-
-                    while(moreCheeseToppings == 1){
-
-                        System.out.println("These be the cheeses!!");
-                        for( int i = 1; i <cheeseToppings.size() + 1 ; i++){
-                            System.out.println(i+ ":" + cheeseToppings.get(i - 1));
-                        }
-
-                        moreCheeseToppings = order.nextInt();
-                        order.nextLine();
-
-                        sandwich.toppings.add(meatToppings.get(moreCheeseToppings - 1 ));
-
-                        System.out.println("Do you want more cheese toppings?");
-                        System.out.println("1: Yes");
-                        System.out.println("2: No");
-
-                        moreCheeseToppings = order.nextInt();
-                        order.nextLine();
-
                     }
                     //Vegetable Choice
                     int moreVegetableToppings = 1;
@@ -133,7 +151,7 @@ class OrderMenu {
                         moreVegetableToppings = order.nextInt();
                         order.nextLine();
 
-                        sandwich.toppings.add(meatToppings.get(moreVegetableToppings - 1 ));
+                        sandwich.vegetableToppings.add(vegToppings.get(moreVegetableToppings - 1 ));
 
                         System.out.println("Do you want more vegetable toppings?");
                         System.out.println("1: Yes");
@@ -155,9 +173,9 @@ class OrderMenu {
                         moreSauces = order.nextInt();
                         order.nextLine();
 
-                        sandwich.toppings.add(sideToppings.get(moreSauces - 1 ));
+                        sandwich.sideToppings.add(sideToppings.get(moreSauces - 1 ));
 
-                        System.out.println("Do you want more vegetable toppings?");
+                        System.out.println("Do you want more sauces ?");
                         System.out.println("1: Yes");
                         System.out.println("2: No");
 
