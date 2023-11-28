@@ -3,8 +3,8 @@ package com.pluralsight;
 import java.util.ArrayList;
 
 public class Sandwich {
-    ArrayList<String> toppings;
 
+    ArrayList<String> toppings;
     //properties
     private int size; // size of sandwich in inches. Options: 4,8,12
     private String bread; // options: white,wheat,rye, or wrap
@@ -143,6 +143,7 @@ public class Sandwich {
 
     }
 
+    }
 
 
-}
+
