@@ -4,34 +4,36 @@ import java.util.*;
 import java.io.*;
 import java.time.*;
 public class Receipt {
-    String filePath = "src/main/resources/Receipt.txt";
+
     LocalDateTime now = LocalDateTime.now();
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm:ss");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM_dd_yyyy_HH_mm_ss");
     String formattedDateTime = now.format(formatter);
+    String filePath = "src/main/resources/"+formattedDateTime;
 
     //writer
 
     public void write (Order order)throws IOException{
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath,true));
-            writer.write("This order was placed" + formattedDateTime);
+            writer.write("This order was placed " + formattedDateTime);
+            writer.newLine();
             int counter = 1;
             for(Sandwich sandwich: order.sandwiches){
-                writer.write("Sandwich " + String.valueOf(counter)  + " Size: " + String.valueOf(sandwich.getSize()) + " inches " + "Bread: " + sandwich.getBread() + " Meat(s): " + sandwich.displayMeat() + " Cheese(s): " + sandwich.displayCheese() + " Vegetable(s): " + sandwich.displayVeg() + " Sauce(s): " + sandwich.displaySauce() + " Side(s): " + sandwich.displaySides());
+                writer.newLine();
+                writer.write("Sandwich " + String.valueOf(counter) +"\n" + " Size: " +
+                        String.valueOf(sandwich.getSize()) + " inches " + "\n" + "Bread: " +
+                        sandwich.getBread() + "\n" + " Meat(s): " + sandwich.displayMeat() +"\n" + " Cheese(s): "
+                        + sandwich.displayCheese() + "\n" + " Vegetable(s): " + sandwich.displayVeg() + "\n" + " Sauce(s): "
+                        + sandwich.displaySauce() + "\n" + " Side(s): " + sandwich.displaySides()+ "\n"  + "\n" + "Order Total: $" + order.total);
                 counter++;
+                writer.newLine();
             }
 
-            writer.newLine();
+
             writer.close();
         }
 
-//    public void saveDealership(int vin,int year,String make,String model,String type, String color, int milage, double price)throws IOException{
-//        FileWriter fileWriter = new FileWriter("src/main/resources/inventory.csv", true);
-//        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-//        bufferedWriter.write("\n"+vin + "|"+ year + "|"+ make + "|"+ model + "|"+ type + "|" + color + "|" + milage + "|" + price);
-//        bufferedWriter.close();
-//    }
-//
+
 
 
 
