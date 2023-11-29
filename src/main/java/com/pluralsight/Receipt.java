@@ -20,10 +20,18 @@ public class Receipt {
                         String.valueOf(sandwich.getSize()) + " inches " + "\n" + "Bread: " +
                         sandwich.getBread() + "\n" + " Meat(s): " + sandwich.displayMeat() +"\n" + " Cheese(s): "
                         + sandwich.displayCheese() + "\n" + " Vegetable(s): " + sandwich.displayVeg() + "\n" + " Sauce(s): "
-                        + sandwich.displaySauce() + "\n" + " Side(s): " + sandwich.displaySides()+ "\n"  + "\n" + "Order Total: $" + order.total);
+                        + sandwich.displaySauce() + "\n" + " Side(s): " + sandwich.displaySides()+ "\n"  + "\n" );
                 counter++;
                 writer.newLine();
             }
+            for(String drinks :order.drinks){
+                writer.write("Drink: " + drinks + "\n");
+
+            }
+            for(String chips : order.chips){
+                writer.write("Chips: " + chips + "\n");
+            }
+            writer.write("Order Total: $" + order.total);
             writer.close();
         }
         public void read()throws IOException{

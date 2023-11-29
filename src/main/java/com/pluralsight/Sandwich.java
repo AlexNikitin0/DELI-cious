@@ -128,41 +128,66 @@ public class Sandwich {
     }
     public String displayMeat(){
         StringBuilder builder = new StringBuilder();
-        for(String meat:meatToppings){
-            builder.append(meat + " ");
+        if(!meatToppings.isEmpty()) {
+            for (String meat : meatToppings) {
+                builder.append(meat + " ");
 
+            }
+        }
+        else {
+            builder.append("NO MEAT");
         }
         return builder.toString();
     }
     public String displayCheese(){
         StringBuilder builder = new StringBuilder();
-        for(String cheese:cheeseToppings){
-            builder.append(cheese + " ");
+        if(!cheeseToppings.isEmpty()) {
+            for (String cheese : cheeseToppings) {
+                builder.append(cheese + " ");
 
+            }
+        }
+        else {
+            builder.append("NO CHEESE");
         }
         return builder.toString();
     }
     public String displayVeg(){
         StringBuilder builder = new StringBuilder();
-        for(String veg:vegetableToppings){
-            builder.append(veg + " ");
+        if(!vegetableToppings.isEmpty()) {
+            for (String veg : vegetableToppings) {
+                builder.append(veg + " ");
 
+            }
+        }
+        else {
+            builder.append("NO VEGGIES");
         }
         return builder.toString();
     }
     public String displaySauce(){
         StringBuilder builder = new StringBuilder();
-        for(String sauce:sauceToppings){
-            builder.append(sauce + " ");
+        if(!sauceToppings.isEmpty()) {
+            for (String sauce : sauceToppings) {
+                builder.append(sauce + " ");
 
+            }
+        }
+        else{
+            builder.append("NO SAUCES");
         }
         return builder.toString();
     }
     public String displaySides(){
         StringBuilder builder = new StringBuilder();
-        for(String side:sideToppings){
-            builder.append(side + " ");
+        if(!sideToppings.isEmpty()) {
+            for (String side : sideToppings) {
+                builder.append(side + " ");
 
+            }
+        }
+        else{
+            builder.append("NO SIDES");
         }
         return builder.toString();
     }
