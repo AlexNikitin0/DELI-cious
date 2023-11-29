@@ -6,6 +6,9 @@ public class Sandwich {
     ArrayList<String> vegetableToppings;
     ArrayList<String> sideToppings;
     ArrayList<String> sauceToppings;
+
+    private String description;
+
     //properties
     private int size; // size of sandwich in inches. Options: 4,8,12
     private String bread; // options: white,wheat,rye, or wrap
@@ -165,6 +168,17 @@ public class Sandwich {
         return builder.toString();
     }
 
+    public void setSandwichPrice(double price){
+        this.totalPrice = price;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
+    }
+
+    public String getDescription(){
+        return description;
+    }
 
 }
 

@@ -13,22 +13,7 @@ public class Order {
         this.drinks = new ArrayList<String>();
         this.chips = new ArrayList<String>();
         this.signatureSandwiches = new ArrayList<SignatureSandwich>();
-        addSignatureSandwiches();
-    }
-    //initialize sig sandwiches
-    BLTSandwich blt = new BLTSandwich();
-    PhillyCheeseSteak philly = new PhillyCheeseSteak();
-    TheWendigosWatergun watergun = new TheWendigosWatergun();
-    CalebsBane bane = new CalebsBane();
-    LongJohnsSilverSpecial silver = new LongJohnsSilverSpecial();
-    TheDissapointedDesi desi = new TheDissapointedDesi();
-    public void addSignatureSandwiches(){
-        signatureSandwiches.add(blt);
-        signatureSandwiches.add(philly);
-        signatureSandwiches.add(watergun);
-        signatureSandwiches.add(bane);
-        signatureSandwiches.add(silver);
-        signatureSandwiches.add(desi);
+
     }
 
     public void displaySignature(){
