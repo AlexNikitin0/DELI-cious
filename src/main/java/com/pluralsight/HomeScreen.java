@@ -52,6 +52,15 @@ class OrderMenu {
             String choice = keyboard.nextLine();
             switch (choice) {
                 case "1":
+                    System.out.println("Do you want a custom sandwich or order one of our signature sandwiches?");
+                    System.out.println("1. Signature.");
+                    System.out.println("2. Custom.");
+                    int order = keyboard.nextInt();
+
+                    if (order == 1) {
+                        System.out.println();
+                    }
+
                 //this is the logic for buying and customizing sammiches
                     System.out.println("What size sandwich would you like?");
 
