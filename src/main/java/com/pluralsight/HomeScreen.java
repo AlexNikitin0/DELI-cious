@@ -57,7 +57,7 @@ class OrderMenu {
                     System.out.println("2. Custom.");
                     int order = keyboard.nextInt();
                     int counter = 1;
-                    if (order == 1) {
+                    if (order == 1) { //display custom sandwiches
                         SignatureSandwich signatureSandwich = new SignatureSandwich();
                         //display signature sandwiches
                         for(Sandwich sandwich: signatureSandwich.signatureSandwiches){
@@ -65,6 +65,39 @@ class OrderMenu {
                             System.out.println(counter + "." + sandwich.getDescription());
                             System.out.println();
                             counter++;
+                        }
+                        //ask user for what sandwich they want
+                        System.out.println("What'll it be, hotshot?");
+                        int userChoice = keyboard.nextInt();
+                        keyboard.nextLine();
+
+                        switch (userChoice){
+                            case 1:
+                                customerOrder.addSandwich(signatureSandwich.signatureSandwiches.get(0));
+                                System.out.println("Sandwich added to order!");
+                                customerOrder.setSandwichPrices();
+                                break;
+                            case 2:
+                                customerOrder.addSandwich(signatureSandwich.signatureSandwiches.get(1));
+                                System.out.println("Sandwich added to order!");
+                                customerOrder.setSandwichPrices();
+                                break;
+                            case 3:
+                                customerOrder.addSandwich(signatureSandwich.signatureSandwiches.get(2));
+                                System.out.println("Sandwich added to order!");
+                                customerOrder.setSandwichPrices();
+                            case 4:
+                                customerOrder.addSandwich(signatureSandwich.signatureSandwiches.get(3));
+                                System.out.println("Sandwich added to order!");
+                                customerOrder.setSandwichPrices();
+                            case 5:
+                                customerOrder.addSandwich(signatureSandwich.signatureSandwiches.get(4));
+                                System.out.println("Sandwich added to order!");
+                                customerOrder.setSandwichPrices();
+                            case 6:
+                                customerOrder.addSandwich(signatureSandwich.signatureSandwiches.get(5));
+                                System.out.println("Sandwich added to order!");
+                                customerOrder.setSandwichPrices();
                         }
 
 
