@@ -58,7 +58,10 @@ class OrderMenu {
                     int order = keyboard.nextInt();
 
                     if (order == 1) {
-                        System.out.println();
+                        //display signature sandwiches
+
+
+
                     }
 
                 //this is the logic for buying and customizing sammiches
