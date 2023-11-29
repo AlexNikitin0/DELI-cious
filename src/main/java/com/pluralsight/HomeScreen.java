@@ -130,11 +130,13 @@ class OrderMenu {
                         }
                         boolean extraMeat;
                         boolean extraCheese;
+
                         List<String> meatToppings = Arrays.asList("Steak", "Ham", "Salami", "Roast Beef", "Chicken", "Herring", "Bacon", "Continue to cheese");
                         List<String> cheeseToppings = Arrays.asList("American", "Provolone", "Cheddar", "Swiss", "PepperJack", "Continue to vegetables");
                         List<String> vegToppings = Arrays.asList("Lettuce", "Peppers", "Onions", "Tomatoes", "Jalapenos", "Cucumbers", "Pickles", "Guacamole", "Mushrooms", "Continue to sauces");
                         List<String> sauceToppings = Arrays.asList("Mayo", "Mustard", "Ketchup", "Ranch", "Thousand Islands", "Vinaigrette", "Continue to sides");
                         List<String> sideToppings = Arrays.asList("Au Jus", "A1", "No more sides");
+
                         Sandwich sandwich = new Sandwich(size, bread, bool);
                         //Meat Choice
                         int userChoice = 0;
@@ -143,177 +145,16 @@ class OrderMenu {
                         System.out.println("2: No");
                         userChoice = keyboard.nextInt();
                         keyboard.nextLine();
-                        if (userChoice == 1) {
-                            int moreMeatToppings = 1;
 
-                            while (moreMeatToppings != 8) {
-                                if (moreMeatToppings <= 7) {
-                                    System.out.println("These are our meat toppings");
-                                    for (int i = 1; i < meatToppings.size() + 1; i++) {
-                                        System.out.println(i + ":" + meatToppings.get(i - 1));
-                                    }
-                                    moreMeatToppings = keyboard.nextInt();
-                                    keyboard.nextLine();
-                                    if (sandwich.meatToppings.size() > 1) {
-                                        sandwich.extraMeat();
-                                    }
-                                    sandwich.meatToppings.add(meatToppings.get(moreMeatToppings - 1));
-                                }
-                                if (sandwich.meatToppings.contains("Continue to cheese")) {
-                                    sandwich.meatToppings.remove(sandwich.meatToppings.size() - 1);
-                                }
-                                if (sandwich.meatToppings.isEmpty()) {
+                        userMeat(userChoice, meatToppings, keyboard, sandwich);
+                        userCheese(keyboard, cheeseToppings, sandwich);
+                        userToppings(keyboard, vegToppings, sandwich);
+                        userSauces(keyboard, sauceToppings, sandwich);
+                        userSide(keyboard, sideToppings, sandwich);
 
-                                    sandwich.meatToppings.add("No meat");
-                                } else {
-                                    System.out.println(sandwich.meatToppings);
-
-                                }
-                            }
-                        }
-
-                        int userChoice2 = 0;
-                        System.out.println("Would like cheese on your sandwich?");
-                        System.out.println("1: Yes");
-                        System.out.println("2: No");
-                        userChoice2 = keyboard.nextInt();
-                        keyboard.nextLine();
-                        if (userChoice2 == 1) {
-                            int moreCheeseToppings = 1;
-
-                            while (moreCheeseToppings != 6) {
-                                if (moreCheeseToppings <= 5) {
-                                    System.out.println("These be the cheeses toppings");
-                                    for (int i = 1; i < cheeseToppings.size() + 1; i++) {
-                                        System.out.println(i + ":" + cheeseToppings.get(i - 1));
-                                    }
-
-                                    moreCheeseToppings = keyboard.nextInt();
-                                    keyboard.nextLine();
-                                    if (sandwich.cheeseToppings.size() > 1) {
-                                        sandwich.extraCheese();
-                                    }
-                                    sandwich.cheeseToppings.add(cheeseToppings.get(moreCheeseToppings - 1));
-                                }
-                                if (sandwich.cheeseToppings.contains("Continue to vegetables")) {
-                                    sandwich.cheeseToppings.remove(sandwich.cheeseToppings.size() - 1);
-                                }
-                                if (sandwich.cheeseToppings.isEmpty()) {
-                                    sandwich.cheeseToppings.add("No cheese");
-                                } else {
-
-                                    System.out.println(sandwich.cheeseToppings);
-                                }
-                            }
-                        }
-
-                        int userChoice3 = 0;
-                        System.out.println("Would you like vegetables on your sandwich?");
-                        System.out.println("1: Yes");
-                        System.out.println("2: No");
-                        userChoice3 = keyboard.nextInt();
-                        keyboard.nextLine();
-                        if (userChoice3 == 1) {
-                            int moreVegetableToppings = 1;
-
-                            while (moreVegetableToppings != 10) {
-                                if (moreVegetableToppings <= 9) {
-                                    System.out.println("These are our vegetables");
-                                    for (int i = 1; i < vegToppings.size() + 1; i++) {
-                                        System.out.println(i + ":" + vegToppings.get(i - 1));
-                                    }
-                                    moreVegetableToppings = keyboard.nextInt();
-                                    keyboard.nextLine();
-                                    sandwich.vegetableToppings.add(vegToppings.get(moreVegetableToppings - 1));
-                                }
-                                if (sandwich.vegetableToppings.contains("Continue to sauces")) {
-                                    sandwich.vegetableToppings.remove(sandwich.vegetableToppings.size() - 1);
-                                }
-                                if (sandwich.vegetableToppings.isEmpty()) {
-                                    sandwich.vegetableToppings.add("No veggies");
-                                } else {
-
-                                    System.out.println(sandwich.vegetableToppings);
-                                }
-                            }
-                        }
-
-                        int userChoice4 = 0;
-                        System.out.println("Would you like any sauces on your sandwich?");
-                        System.out.println("1: Yes");
-                        System.out.println("2: No");
-                        userChoice4 = keyboard.nextInt();
-                        keyboard.nextLine();
-                        if (userChoice4 == 1) {
-                            int moreSauceToppings = 1;
-
-                            while (moreSauceToppings != 7) {
-                                if (moreSauceToppings <= 6) {
-                                    System.out.println("These are our sauces");
-                                    for (int i = 1; i < sauceToppings.size() + 1; i++) {
-                                        System.out.println(i + ":" + sauceToppings.get(i - 1));
-                                    }
-
-                                    moreSauceToppings = keyboard.nextInt();
-                                    keyboard.nextLine();
-                                    sandwich.sauceToppings.add(sauceToppings.get(moreSauceToppings - 1));
-                                }
-                                if (sandwich.sauceToppings.contains("Continue to sides")) {
-                                    sandwich.sauceToppings.remove(sandwich.sauceToppings.size() - 1);
-                                }
-                                if (sandwich.sauceToppings.size() < 1) {
-                                    sandwich.sauceToppings.add("No sauces");
-                                } else {
-
-                                    System.out.println(sandwich.sauceToppings);
-                                }
-                            }
-                        }
-
-                        int userChoice5 = 0;
-                        System.out.println("Would you like any sides with your sandwich?");
-                        System.out.println("1: Yes");
-                        System.out.println("2: No");
-                        userChoice5 = keyboard.nextInt();
-                        keyboard.nextLine();
-                        if (userChoice5 == 1) {
-                            int moreSideToppings = 1;
-
-                            while (moreSideToppings != 3) {
-                                if (moreSideToppings <= 2) {
-                                    System.out.println("These are our sides");
-                                    for (int i = 1; i < sideToppings.size() + 1; i++) {
-                                        System.out.println(i + ":" + sideToppings.get(i - 1));
-                                    }
-
-                                    moreSideToppings = keyboard.nextInt();
-                                    keyboard.nextLine();
-                                    sandwich.sideToppings.add(sideToppings.get(moreSideToppings - 1));
-                                }
-                                if (sandwich.sideToppings.isEmpty()) {
-
-                                    sandwich.sideToppings.add("No sides");
-                                } else {
-                                    System.out.println(sandwich.sideToppings);
-                                }
-                            }
-                        }
-
-                        if (sandwich.sideToppings.contains("No more sides")) {
-                            sandwich.sideToppings.remove(sandwich.sideToppings.size() - 1);
-                        }
                         //test output
-                        customerOrder.sandwiches.add(sandwich);
-                        for (Sandwich sandwiches : customerOrder.sandwiches) {
-                            System.out.println(sandwiches.getBread() + " " + sandwiches.getSize() + sandwiches.meatToppings + sandwiches.cheeseToppings + sandwiches.sauceToppings + sandwiches.vegetableToppings + sandwiches.sideToppings);
-                            //test price output
-                            for (Sandwich sandwichess : customerOrder.sandwiches) {
-                                sandwichess.getTotalPrice();
-                            }
-                        }
-                        customerOrder.setSandwichPrices();
+                        addAndDisplaySandwich(sandwich);
                     }
-
 
                     break;
                 case "2":
@@ -332,6 +173,188 @@ class OrderMenu {
                     System.out.println("WRONG! STOP IT!");
                     break;
 
+            }
+        }
+    }
+
+    private static void addAndDisplaySandwich(Sandwich sandwich) {
+        customerOrder.sandwiches.add(sandwich);
+        for (Sandwich sandwiches : customerOrder.sandwiches) {
+            System.out.println(sandwiches.getBread() + " " + sandwiches.getSize() + sandwiches.meatToppings + sandwiches.cheeseToppings + sandwiches.sauceToppings + sandwiches.vegetableToppings + sandwiches.sideToppings);
+            //test price output
+            for (Sandwich sandwichess : customerOrder.sandwiches) {
+                sandwichess.getTotalPrice();
+            }
+        }
+        customerOrder.setSandwichPrices();
+    }
+
+    private static void userMeat(int userChoice, List<String> meatToppings, Scanner keyboard, Sandwich sandwich) {
+        if (userChoice == 1) {
+            int moreMeatToppings = 1;
+
+            while (moreMeatToppings != 8) {
+                if (moreMeatToppings <= 7) {
+                    System.out.println("These are our meat toppings");
+                    for (int i = 1; i < meatToppings.size() + 1; i++) {
+                        System.out.println(i + ":" + meatToppings.get(i - 1));
+                    }
+                    moreMeatToppings = keyboard.nextInt();
+                    keyboard.nextLine();
+                    if (sandwich.meatToppings.size() > 1) {
+                        sandwich.extraMeat();
+                    }
+                    sandwich.meatToppings.add(meatToppings.get(moreMeatToppings - 1));
+                }
+                if (sandwich.meatToppings.contains("Continue to cheese")) {
+                    sandwich.meatToppings.remove(sandwich.meatToppings.size() - 1);
+                }
+                if (sandwich.meatToppings.isEmpty()) {
+
+                    sandwich.meatToppings.add("No meat");
+                } else {
+                    System.out.println(sandwich.meatToppings);
+
+                }
+            }
+        }
+    }
+
+    private static void userSide(Scanner keyboard, List<String> sideToppings, Sandwich sandwich) {
+        int userChoice5 = 0;
+        System.out.println("Would you like any sides with your sandwich?");
+        System.out.println("1: Yes");
+        System.out.println("2: No");
+        userChoice5 = keyboard.nextInt();
+        keyboard.nextLine();
+        if (userChoice5 == 1) {
+            int moreSideToppings = 1;
+
+            while (moreSideToppings != 3) {
+                if (moreSideToppings <= 2) {
+                    System.out.println("These are our sides");
+                    for (int i = 1; i < sideToppings.size() + 1; i++) {
+                        System.out.println(i + ":" + sideToppings.get(i - 1));
+                    }
+
+                    moreSideToppings = keyboard.nextInt();
+                    keyboard.nextLine();
+                    sandwich.sideToppings.add(sideToppings.get(moreSideToppings - 1));
+                }
+                if (sandwich.sideToppings.isEmpty()) {
+
+                    sandwich.sideToppings.add("No sides");
+                } else {
+                    System.out.println(sandwich.sideToppings);
+                }
+            }
+        }
+
+        if (sandwich.sideToppings.contains("No more sides")) {
+            sandwich.sideToppings.remove(sandwich.sideToppings.size() - 1);
+        }
+    }
+
+    private static void userCheese(Scanner keyboard, List<String> cheeseToppings, Sandwich sandwich) {
+        int userChoice2 = 0;
+        System.out.println("Would like cheese on your sandwich?");
+        System.out.println("1: Yes");
+        System.out.println("2: No");
+        userChoice2 = keyboard.nextInt();
+        keyboard.nextLine();
+        if (userChoice2 == 1) {
+            int moreCheeseToppings = 1;
+
+            while (moreCheeseToppings != 6) {
+                if (moreCheeseToppings <= 5) {
+                    System.out.println("These be the cheeses toppings");
+                    for (int i = 1; i < cheeseToppings.size() + 1; i++) {
+                        System.out.println(i + ":" + cheeseToppings.get(i - 1));
+                    }
+
+                    moreCheeseToppings = keyboard.nextInt();
+                    keyboard.nextLine();
+                    if (sandwich.cheeseToppings.size() > 1) {
+                        sandwich.extraCheese();
+                    }
+                    sandwich.cheeseToppings.add(cheeseToppings.get(moreCheeseToppings - 1));
+                }
+                if (sandwich.cheeseToppings.contains("Continue to vegetables")) {
+                    sandwich.cheeseToppings.remove(sandwich.cheeseToppings.size() - 1);
+                }
+                if (sandwich.cheeseToppings.isEmpty()) {
+                    sandwich.cheeseToppings.add("No cheese");
+                } else {
+
+                    System.out.println(sandwich.cheeseToppings);
+                }
+            }
+        }
+    }
+
+    private static void userSauces(Scanner keyboard, List<String> sauceToppings, Sandwich sandwich) {
+        int userChoice4 = 0;
+        System.out.println("Would you like any sauces on your sandwich?");
+        System.out.println("1: Yes");
+        System.out.println("2: No");
+        userChoice4 = keyboard.nextInt();
+        keyboard.nextLine();
+        if (userChoice4 == 1) {
+            int moreSauceToppings = 1;
+
+            while (moreSauceToppings != 7) {
+                if (moreSauceToppings <= 6) {
+                    System.out.println("These are our sauces");
+                    for (int i = 1; i < sauceToppings.size() + 1; i++) {
+                        System.out.println(i + ":" + sauceToppings.get(i - 1));
+                    }
+
+                    moreSauceToppings = keyboard.nextInt();
+                    keyboard.nextLine();
+                    sandwich.sauceToppings.add(sauceToppings.get(moreSauceToppings - 1));
+                }
+                if (sandwich.sauceToppings.contains("Continue to sides")) {
+                    sandwich.sauceToppings.remove(sandwich.sauceToppings.size() - 1);
+                }
+                if (sandwich.sauceToppings.size() < 1) {
+                    sandwich.sauceToppings.add("No sauces");
+                } else {
+
+                    System.out.println(sandwich.sauceToppings);
+                }
+            }
+        }
+    }
+
+    private static void userToppings(Scanner keyboard, List<String> vegToppings, Sandwich sandwich) {
+        int userChoice3 = 0;
+        System.out.println("Would you like vegetables on your sandwich?");
+        System.out.println("1: Yes");
+        System.out.println("2: No");
+        userChoice3 = keyboard.nextInt();
+        keyboard.nextLine();
+        if (userChoice3 == 1) {
+            int moreVegetableToppings = 1;
+
+            while (moreVegetableToppings != 10) {
+                if (moreVegetableToppings <= 9) {
+                    System.out.println("These are our vegetables");
+                    for (int i = 1; i < vegToppings.size() + 1; i++) {
+                        System.out.println(i + ":" + vegToppings.get(i - 1));
+                    }
+                    moreVegetableToppings = keyboard.nextInt();
+                    keyboard.nextLine();
+                    sandwich.vegetableToppings.add(vegToppings.get(moreVegetableToppings - 1));
+                }
+                if (sandwich.vegetableToppings.contains("Continue to sauces")) {
+                    sandwich.vegetableToppings.remove(sandwich.vegetableToppings.size() - 1);
+                }
+                if (sandwich.vegetableToppings.isEmpty()) {
+                    sandwich.vegetableToppings.add("No veggies");
+                } else {
+
+                    System.out.println(sandwich.vegetableToppings);
+                }
             }
         }
     }
