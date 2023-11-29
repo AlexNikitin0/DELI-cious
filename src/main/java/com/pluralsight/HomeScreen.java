@@ -3,12 +3,9 @@ import java.io.IOException;
 import java.util.*;
 
 //Import necessary functions.
-
 public class HomeScreen {
-
     private static final Scanner keyboard = new Scanner(System.in);
     public static void main(String[] args) throws IOException {
-
         System.out.println("Welcome to the best possible iteration of Deli-Cious!");
         //Project strong confidence in the business.
         while (true) {
@@ -45,12 +42,8 @@ class OrderMenu {
     }
     public void run() throws IOException {
         System.out.println("What'll be your order?:");
-
         while (true) {
             Scanner keyboard = new Scanner(System.in);
-
-
-
             System.out.println("1. Add sandwich.");
             System.out.println("2. Add drink.");
             System.out.println("3. Add chips.");
@@ -59,7 +52,7 @@ class OrderMenu {
             String choice = keyboard.nextLine();
             switch (choice) {
                 case "1":
-//this where its gonna be
+                //this is the logic for buying and customizing sammiches
                     System.out.println("What size sandwich would you like?");
 
                     System.out.println("We have a 4 inch, 8 Inch, and 12 Inch.");
@@ -77,21 +70,15 @@ class OrderMenu {
                     }else{
                         bool = false;
                     }
-
-
                     boolean extraMeat;
                     boolean extraCheese;
-
-                    List<String> meatToppings = Arrays.asList("Steak","Ham", "Salami", "Roast Beef","Chicken","Bacon","Continue to cheese");
+                    List<String> meatToppings = Arrays.asList("Steak","Ham", "Salami", "Roast Beef","Chicken", "Herring","Bacon","Continue to cheese");
                     List<String> cheeseToppings = Arrays.asList("American","Provolone", "Cheddar", "Swiss","PepperJack","Continue to vegetables");
                     List<String> vegToppings = Arrays.asList("Lettuce","Peppers", "Onions", "Tomatoes","Jalapenos","Cucumbers","Pickles","Guacamole","Mushrooms","Continue to sauces");
                     List<String> sauceToppings = Arrays.asList("Mayo","Mustard", "Ketchup", "Ranch","Thousand Islands","Vinaigrette","Continue to sides");
                     List<String> sideToppings = Arrays.asList("Au Jus","A1","No more sides");
                     Sandwich sandwich = new Sandwich(size,bread,bool);
-
-
                     //Meat Choice
-
                     int userChoice = 0;
                     System.out.println("Would like meat on your sandwich?");
                     System.out.println("1: Yes");
@@ -101,13 +88,12 @@ class OrderMenu {
                     if (userChoice == 1){
                         int moreMeatToppings = 1;
 
-                        while(moreMeatToppings != 7){
-                            if (moreMeatToppings <= 6){
+                        while(moreMeatToppings != 8){
+                            if (moreMeatToppings <= 7){
                                 System.out.println("These are our meat toppings");
                                 for( int i = 1; i < meatToppings.size() + 1 ; i++){
                                     System.out.println(i+ ":" + meatToppings.get(i - 1));
                                 }
-
                                 moreMeatToppings = keyboard.nextInt();
                                 keyboard.nextLine();
                                 if (sandwich.meatToppings.size() > 1){
@@ -119,7 +105,8 @@ class OrderMenu {
                                 sandwich.meatToppings.remove(sandwich.meatToppings.size() -1);
                             }
                             System.out.println(sandwich.meatToppings);
-                        }}
+                        }
+                    }
 
                     int userChoice2 = 0;
                     System.out.println("Would like cheese on your sandwich?");
@@ -148,8 +135,8 @@ class OrderMenu {
                                 sandwich.cheeseToppings.remove(sandwich.cheeseToppings.size() -1);
                             }
                             System.out.println(sandwich.cheeseToppings);
-                        }}
-
+                        }
+                    }
 
                     int userChoice3 = 0;
                     System.out.println("Would you like vegetables on your sandwich?");
@@ -166,17 +153,16 @@ class OrderMenu {
                                 for( int i = 1; i < vegToppings.size() + 1 ; i++){
                                     System.out.println(i+ ":" + vegToppings.get(i - 1));
                                 }
-
                                 moreVegetableToppings = keyboard.nextInt();
                                 keyboard.nextLine();
-
                                 sandwich.vegetableToppings.add(vegToppings.get(moreVegetableToppings - 1 ));
                             }
                             if(sandwich.vegetableToppings.contains("Continue to sauces")){
                                 sandwich.vegetableToppings.remove(sandwich.vegetableToppings.size() -1);
                             }
                             System.out.println(sandwich.vegetableToppings);
-                        }}
+                        }
+                    }
 
                     int userChoice4 = 0;
                     System.out.println("Would you like any sauces on your sandwich?");
@@ -196,15 +182,14 @@ class OrderMenu {
 
                                 moreSauceToppings = keyboard.nextInt();
                                 keyboard.nextLine();
-
                                 sandwich.sauceToppings.add(sauceToppings.get(moreSauceToppings - 1 ));
                             }
                             if(sandwich.sauceToppings.contains("Continue to sides")){
                                 sandwich.sauceToppings.remove(sandwich.sauceToppings.size() -1);
                             }
-
                             System.out.println(sandwich.sauceToppings);
-                        }}
+                        }
+                    }
 
                     int userChoice5= 0;
                     System.out.println("Would you like any sides with your sandwich?");
@@ -224,17 +209,15 @@ class OrderMenu {
 
                                 moreSideToppings = keyboard.nextInt();
                                 keyboard.nextLine();
-
                                 sandwich.sideToppings.add(sideToppings.get(moreSideToppings - 1 ));
                             }
-
                             System.out.println(sandwich.sideToppings);
-                        }}
+                        }
+                    }
 
                     if(sandwich.sideToppings.contains("No more sides")){
                         sandwich.sideToppings.remove(sandwich.sideToppings.size() -1);
                     }
-
                     //test output
                     customerOrder.sandwiches.add(sandwich);
                     for (Sandwich sandwiches: customerOrder.sandwiches) {
@@ -275,11 +258,11 @@ class OrderMenu {
         //Drink options
         String sizeChoice = keyboard.nextLine();
         Map<String, Double> drinkPrices = new HashMap<>();
-//Logic for prices.
+        //Logic for prices.
         drinkPrices.put("1", 2.0);
         drinkPrices.put("2", 2.5);
         drinkPrices.put("3", 3.0);
-//Your options, monsieur.
+        //Your options, monsieur.
         if (drinkPrices.containsKey(sizeChoice)) {
             System.out.println("Select a drink:");
             System.out.println("1. Coke.");
@@ -301,7 +284,8 @@ class OrderMenu {
             System.out.println();
         } else {
             System.out.println("You're embarrassing yourself, KNOCK IT OFF BOZO!");
-        }}
+        }
+    }
     private void addChips() {
         Scanner keyboard = new Scanner(System.in);
         //Present the options
@@ -314,14 +298,11 @@ class OrderMenu {
         System.out.println("6. Organic kind that nobody buys.");
         System.out.print("What'll it be?: ");
         int chipChoice = keyboard.nextInt();
-                //Logic below for adding chips
+        //Logic below for adding chips
 
         double chipPrice = 1.50;
-
         customerOrder.setDrinkorChipTotal(chipPrice);
-
         System.out.println("Chips added.");
-
         List<String> chip =  Arrays.asList("Doritos","Sun Chips","Fun-Yuns","Cheetos","Lays","Organic kind that nobody buys");
         customerOrder.chips.add(chip.get(chipChoice - 1));
 
@@ -348,6 +329,5 @@ class OrderMenu {
         System.exit(0);
     }
 }
-
 //Since you got to the bottom of the code, here's a fun fact
 //There's more stars in the observable universe than grains of sand on every beach on Earth.

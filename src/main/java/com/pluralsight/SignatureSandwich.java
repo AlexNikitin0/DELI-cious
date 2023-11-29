@@ -19,3 +19,24 @@ class PhillyCheeseSteak extends SignatureSandwich {
         super(8, "White", true, Arrays.asList("Steak", "American", "Peppers", "Mayo", "Toasted"));
     }
 }
+class TheWendigosWatergun extends SignatureSandwich {
+    public TheWendigosWatergun() {
+        super(12, "Wrap", true, Arrays.asList("Steak", "PepperJack", "Lettuce", "Jalapenos", "Pickles", "A1"));
+    }
+}
+class CalebsBane extends SignatureSandwich {
+    public CalebsBane() {
+        super(8, "Rye", false, Arrays.asList("Roast beef", "PepperJack", "Provolone", "Pickles",
+                "Tomatoes", "Lettuce", "Mustard", "Thousand Island"));
+    }
+}
+class LongJohnsSilverSpecial extends SignatureSandwich{
+    public LongJohnsSilverSpecial() {
+        super(12, "Rye", false, Arrays.asList("Herring"));
+    }
+}
+class TheDissapointedDesi extends SignatureSandwich{
+    public TheDissapointedDesi() {
+        super(4, "White", true, Arrays.asList("Steak", "PepperJack", "Onions", "Ketchup", "Mayo"));
+    }
+}

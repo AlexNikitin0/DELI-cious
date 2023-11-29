@@ -1,14 +1,11 @@
 package com.pluralsight;
-
 import java.util.ArrayList;
-
 public class Sandwich {
     ArrayList<String> meatToppings;
     ArrayList<String> cheeseToppings;
     ArrayList<String> vegetableToppings;
     ArrayList<String> sideToppings;
     ArrayList<String> sauceToppings;
-
     //properties
     private int size; // size of sandwich in inches. Options: 4,8,12
     private String bread; // options: white,wheat,rye, or wrap
@@ -19,31 +16,24 @@ public class Sandwich {
     private double totalPrice;
     private double cheesePrice;
     private boolean isExtraMeat, isExtraCheese;
-
     public boolean isExtraMeat() {
         return isExtraMeat;
     }
-
     public void setExtraMeat(boolean extraMeat) {
         isExtraMeat = extraMeat;
     }
-
     public boolean isExtraCheese() {
         return isExtraCheese;
     }
-
     public void setExtraCheese(boolean extraCheese) {
         isExtraCheese = extraCheese;
     }
-
     public Sandwich(int size, String bread, boolean isToasted) {
         this.size = size;
         this.bread = bread;
         this.isToasted = isToasted;
         this.isExtraMeat = false;
         this.isExtraCheese = false;
-
-
         this.meatToppings = new ArrayList<String>();
         this.cheeseToppings = new ArrayList<String>();
         this.vegetableToppings = new ArrayList<String>();
@@ -54,35 +44,27 @@ public class Sandwich {
         setCheesePrice();
         setMeatPrice();
     }
-
     public int getSize() {
         return size;
     }
-
     public void setSize(int size) {
         this.size = size;
     }
-
     public String getBread() {
         return bread;
     }
-
     public void setBread(String bread) {
         this.bread = bread;
     }
-
     public boolean isToasted() {
         return isToasted;
     }
-
     public void setToasted(boolean toasted) {
         isToasted = toasted;
     }
-
     public double getSandwichPrice() {
         return breadPrice;
     }
-
     public void setBreadPrice() {
         if (this.size == 4) {
             this.breadPrice = 5.50;
@@ -91,10 +73,7 @@ public class Sandwich {
         } else {
             this.breadPrice = 8.50;
         }
-
-
     }
-
     public void setMeatPrice() {
         if (this.size == 4) {
             this.meatPrice = 1;
@@ -104,7 +83,6 @@ public class Sandwich {
             meatPrice = 3;
         }
     }
-
     public void addMeatPrice() {
         totalPrice += meatPrice;
     }
@@ -125,7 +103,6 @@ public class Sandwich {
             cheesePrice += .30;
         } else if (this.size == 8 && isExtraCheese) {
             cheesePrice += .6;
-
         } else if (this.size == 12 && isExtraCheese) {
             cheesePrice += .9;
         }
@@ -139,54 +116,44 @@ public class Sandwich {
             cheesePrice = 2.25;
         }
     }
-
     public void addCheesePrice() {
         totalPrice += cheesePrice;
     }
-
     public double getTotalPrice() {
         System.out.println(this.breadPrice + this.meatPrice + this.cheesePrice);
         return this.breadPrice + this.meatPrice + this.cheesePrice;
 
     }
-
     public String displayMeat(){
         StringBuilder builder = new StringBuilder();
         for(String meat:meatToppings){
             builder.append(meat + " ");
 
         }
-
         return builder.toString();
     }
-
     public String displayCheese(){
         StringBuilder builder = new StringBuilder();
         for(String cheese:cheeseToppings){
             builder.append(cheese + " ");
 
         }
-
         return builder.toString();
     }
-
     public String displayVeg(){
         StringBuilder builder = new StringBuilder();
         for(String veg:vegetableToppings){
             builder.append(veg + " ");
 
         }
-
         return builder.toString();
     }
-
     public String displaySauce(){
         StringBuilder builder = new StringBuilder();
         for(String sauce:sauceToppings){
             builder.append(sauce + " ");
 
         }
-
         return builder.toString();
     }
     public String displaySides(){
@@ -195,9 +162,5 @@ public class Sandwich {
             builder.append(side + " ");
 
         }
-
         return builder.toString();
-    }
-
-}
-
+    }}
