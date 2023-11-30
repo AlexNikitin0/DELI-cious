@@ -8,3 +8,6 @@ If the user decides to continue with an order they have an option to add a sandw
 Images of the deli runnning will be below 👇
 
 
+<img width="367" alt="Screenshot 2023-11-30 at 12 57 12 PM" src="https://github.com/AlexNikitin0/DELI-cious/assets/113218888/e88827ea-1eac-4de9-9011-331484b492d6">
+<img width="373" alt="Screenshot 2023-11-30 at 12 49 11 PM" src="https://github.com/AlexNikitin0/DELI-cious/assets/113218888/f61eff8c-10d9-44ee-9c75-5296c8e83dd7">
+<img width="563" alt="Screenshot 2023-11-30 at 12 48 17 PM" src="https://github.com/AlexNikitin0/DELI-cious/assets/113218888/63c2b78f-0f09-4ac9-9a70-3874db9ffcf7">
