@@ -31,4 +31,10 @@ public class Order {
             this.total += sandwich.getTotalPrice();
         }
     }
+
+    public void totalFormated(){
+
+
+    }
+
 }
