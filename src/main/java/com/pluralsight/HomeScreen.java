@@ -2,7 +2,7 @@ package com.pluralsight;
 import java.io.IOException;
 import java.util.*;
 
-//Import necessary functions.
+//Import necessary functions - Only up to 179 is actual HomeScreen.
 public class HomeScreen {
     private static final Scanner keyboard = new Scanner(System.in);
     public static void main(String[] args) throws IOException {
@@ -13,7 +13,7 @@ public class HomeScreen {
             System.out.println("2. Quit");
             System.out.println("What'll it be, hotshot?");
             String choice = keyboard.nextLine();
-            //Switches get stitches, am i right??????
+            //Switches get stitches, am I right??????
             switch (choice) {
                 case "1":
                     OrderMenu orderMenu = new OrderMenu();
@@ -61,7 +61,7 @@ class OrderMenu {
                     int counter = 1;
                     if (order == 1) { //display custom sandwiches
                         SignatureSandwich signatureSandwich = new SignatureSandwich();
-                        //display signature sandwiches
+                        //Display signature sandwiches
                         for (Sandwich sandwich : signatureSandwich.signatureSandwiches) {
 
                             System.out.println(counter + "." + sandwich.getDescription());
@@ -176,18 +176,7 @@ class OrderMenu {
             }
         }
     }
-
-    private static void addAndDisplaySandwich(Sandwich sandwich) {
-        customerOrder.sandwiches.add(sandwich);
-        for (Sandwich sandwiches : customerOrder.sandwiches) {
-            System.out.println(sandwiches.getBread() + " " + sandwiches.getSize() + sandwiches.meatToppings + sandwiches.cheeseToppings + sandwiches.sauceToppings + sandwiches.vegetableToppings + sandwiches.sideToppings);
-            //test price output
-            for (Sandwich sandwichess : customerOrder.sandwiches) {
-                sandwichess.getTotalPrice();
-            }
-        }
-        customerOrder.setSandwichPrices();
-    }
+//Methods for the HomeScreen and Arraylist
 
     private static void userMeat(int userChoice, List<String> meatToppings, Scanner keyboard, Sandwich sandwich) {
         if (userChoice == 1) {
@@ -380,12 +369,12 @@ class OrderMenu {
             System.out.println("2. Pepsi.");
             System.out.println("3. Fanta.");
             System.out.println("4. CheerWine.");
-            System.out.println("5. A&W.");
+            System.out.println("5. Diet Dr. Kelp");
             System.out.println("6. Bleach.");
             System.out.print("What'll it be?: ");
             int drinkChoice = keyboard.nextInt();
-            List<String> drinks = Arrays.asList("Coke", "Pepsi", "Fanta", "CheerWine", "A&W", "Bleach");
-            customerOrder.drinks.add(drinks.get(drinkChoice - 1));//add to array for display later
+            List<String> drinks = Arrays.asList("Coke", "Pepsi", "Fanta", "CheerWine", "Diet Dr. Kelp", "Bleach");
+            customerOrder.drinks.add(drinks.get(drinkChoice - 1));//Add To Array For Display Later
 
             //Calculate the drank price.
 
@@ -419,7 +408,20 @@ class OrderMenu {
         customerOrder.chips.add(chip.get(chipChoice - 1));
 
     }
+//Checkout Method
+// This method adds the user created sandwich to the order and then displays the details of every sandwich that the order has.
 
+ private static void addAndDisplaySandwich(Sandwich sandwich) {
+        customerOrder.sandwiches.add(sandwich);
+        for (Sandwich sandwiches : customerOrder.sandwiches) {
+            System.out.println(sandwiches.getBread() + " " + sandwiches.getSize() + sandwiches.meatToppings + sandwiches.cheeseToppings + sandwiches.sauceToppings + sandwiches.vegetableToppings + sandwiches.sideToppings);
+            //test price output
+            for (Sandwich sandwichess : customerOrder.sandwiches) {
+                sandwichess.getTotalPrice();
+            }
+        }
+        customerOrder.setSandwichPrices();
+    }
     private void checkout() throws IOException {
         System.out.println("Order Details: ");
         //This is where the details will go
@@ -440,7 +442,7 @@ class OrderMenu {
                 System.out.println(chips);
             }
         }
-            //output custom sandwich
+            //Output Custom Sandwich
             System.out.print("Sandwich: ");
             for (Sandwich sandwiches : customerOrder.sandwiches) {
                 System.out.print("Bread: " + sandwiches.getBread() + " Size: " + sandwiches.getSize() + " ");
@@ -484,5 +486,6 @@ class OrderMenu {
 
     }
 }
-//Since you got to the bottom of the code, here's a fun fact
+//Since you got to the bottom of the code, here's some fun facts!
 //There's more stars in the observable universe than grains of sand on every beach on Earth.
+// The seeds of apples have natural cyanide in them.

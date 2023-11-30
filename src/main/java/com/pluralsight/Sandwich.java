@@ -31,6 +31,9 @@ public class Sandwich {
     public void setExtraCheese(boolean extraCheese) {
         isExtraCheese = extraCheese;
     }
+
+
+
     public Sandwich(int size, String bread, boolean isToasted) {
         this.size = size;
         this.bread = bread;
@@ -47,6 +50,9 @@ public class Sandwich {
         setCheesePrice();
         setMeatPrice();
     }
+
+   //
+
     public int getSize() {
         return size;
     }
@@ -77,6 +83,9 @@ public class Sandwich {
             this.breadPrice = 8.50;
         }
     }
+
+   //
+
     public void setMeatPrice() {
         if (this.size == 4) {
             this.meatPrice = 1;
@@ -100,6 +109,9 @@ public class Sandwich {
             meatPrice += 1.50;
         }
     }
+
+ //
+
     public void extraCheese() {
         this.isExtraCheese = true;
         if (this.size == 4 && isExtraCheese) {
@@ -110,6 +122,9 @@ public class Sandwich {
             cheesePrice += .9;
         }
     }
+
+   //
+
     public void setCheesePrice() {
         if (this.size == 4) {
             this.cheesePrice = .75;
@@ -119,6 +134,8 @@ public class Sandwich {
             cheesePrice = 2.25;
         }
     }
+
+ //
     public void addCheesePrice() {
         totalPrice += cheesePrice;
     }
@@ -126,6 +143,9 @@ public class Sandwich {
         return this.breadPrice + this.meatPrice + this.cheesePrice;
 
     }
+
+    //D - StringBuilder for the various toppings
+
     public String displayMeat(){
         StringBuilder builder = new StringBuilder();
         if(!meatToppings.isEmpty()) {
@@ -165,6 +185,9 @@ public class Sandwich {
         }
         return builder.toString();
     }
+
+  //
+
     public String displaySauce(){
         StringBuilder builder = new StringBuilder();
         if(!sauceToppings.isEmpty()) {
@@ -191,6 +214,9 @@ public class Sandwich {
         }
         return builder.toString();
     }
+
+
+ //
 
     public void setSandwichPrice(double price){
         this.totalPrice = price;

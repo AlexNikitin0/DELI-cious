@@ -4,11 +4,16 @@ import java.util.*;
 import java.io.*;
 import java.time.*;
 public class Receipt {
+
+  //C - Underscore Hack
     LocalDateTime now = LocalDateTime.now();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM_dd_yyyy_HH_mm_ss");
     String formattedDateTime = now.format(formatter);
     String filePath = "src/main/resources/"+formattedDateTime;
     //writer
+
+   //Writer for the receipt
+
     public void write (Order order)throws IOException{
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath,true));
             writer.write("This order was placed " + formattedDateTime);
@@ -34,12 +39,5 @@ public class Receipt {
             writer.write("Order Total: $" + order.total);
             writer.close();
         }
-        public void read()throws IOException{
-            BufferedReader reader = new BufferedReader((new FileReader(filePath)));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println("Your receipt says: " + line);
-            }
-            reader.close();
+
         }
-        }//end class

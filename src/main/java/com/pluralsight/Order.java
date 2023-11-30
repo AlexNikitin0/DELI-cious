@@ -1,5 +1,8 @@
 package com.pluralsight;
 import java.util.ArrayList;
+
+// D - Take order - Adds stuff to receipt
+
 public class Order {
     double total;
     ArrayList<Sandwich> sandwiches;
@@ -14,13 +17,6 @@ public class Order {
         this.chips = new ArrayList<String>();
         this.signatureSandwiches = new ArrayList<SignatureSandwich>();
 
-    }
-
-    public void displaySignature(){
-        for(SignatureSandwich sandwich:signatureSandwiches){
-            int counter = 1;
-            System.out.println(counter + "." + sandwich.toString());
-        }
     }
 
 

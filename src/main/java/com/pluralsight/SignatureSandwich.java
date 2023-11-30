@@ -20,7 +20,7 @@ public class SignatureSandwich {
         makeDesi();
 
     }
-
+// A - This is the signature sandwiches class with our own custom creations it stores price and ingredients!
     public void makeBLT(){
         Sandwich blt = new Sandwich(8,"White",true);
         blt.meatToppings.add("Bacon");
@@ -91,59 +91,3 @@ public class SignatureSandwich {
         signatureSandwiches.add(desi);
     }
 }
-
-//class TheDissapointedDesi extends SignatureSandwich{
-//    public TheDissapointedDesi() {
-//        super(4, "White", true, Arrays.asList("Steak", "PepperJack", "Onions", "Ketchup", "Mayo"));
-//    }
-//
-//    public String toString(){
-//        for(String stuff:)
-//    }
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
