@@ -135,7 +135,7 @@ class OrderMenu {
                         List<String> cheeseToppings = Arrays.asList("American", "Provolone", "Cheddar", "Swiss", "PepperJack", "Continue to vegetables");
                         List<String> vegToppings = Arrays.asList("Lettuce", "Peppers", "Onions", "Tomatoes", "Jalapenos", "Cucumbers", "Pickles", "Guacamole", "Mushrooms", "Continue to sauces");
                         List<String> sauceToppings = Arrays.asList("Mayo", "Mustard", "Ketchup", "Ranch", "Thousand Islands", "Vinaigrette", "Continue to sides");
-                        List<String> sideToppings = Arrays.asList("Au Jus", "A1", "No more sides");
+                        List<String> sideToppings = Arrays.asList("Au Jus", "A1", "DELICIOUS RED 40" , "No more sides");
 
                         Sandwich sandwich = new Sandwich(size, bread, bool);
                         //Meat Choice
@@ -219,8 +219,8 @@ class OrderMenu {
         if (userChoice5 == 1) {
             int moreSideToppings = 1;
 
-            while (moreSideToppings != 3) {
-                if (moreSideToppings <= 2) {
+            while (moreSideToppings != 4) {
+                if (moreSideToppings <= 3) {
                     System.out.println("These are our sides");
                     for (int i = 1; i < sideToppings.size() + 1; i++) {
                         System.out.println(i + ":" + sideToppings.get(i - 1));
