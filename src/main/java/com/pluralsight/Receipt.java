@@ -35,7 +35,7 @@ public class Receipt {
             for(String chips : order.chips){
                 writer.write("Chips: " + chips + "\n");
             }
-            writer.write("Order Total: $" + String.format("%.2f",order.total));
+            writer.write("Order Total: $" + String.format("%.2f",order.getTotal()));
             writer.close();
         }
 

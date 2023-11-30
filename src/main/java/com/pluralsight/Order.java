@@ -4,7 +4,7 @@ import java.util.ArrayList;
 // D - Take order - Adds stuff to receipt
 
 public class Order {
-    double total;
+    private double total;
     ArrayList<Sandwich> sandwiches;
     ArrayList<String> drinks;
     ArrayList<String> chips;
@@ -17,6 +17,10 @@ public class Order {
         this.chips = new ArrayList<String>();
         this.signatureSandwiches = new ArrayList<SignatureSandwich>();
 
+    }
+
+    public double getTotal() {
+        return total;
     }
 
     public void addSandwich(Sandwich sandwich){

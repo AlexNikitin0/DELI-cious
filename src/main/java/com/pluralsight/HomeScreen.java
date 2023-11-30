@@ -50,7 +50,7 @@ class OrderMenu {
             System.out.println("2. Add drink.");
             System.out.println("3. Add chips.");
             System.out.println("4. Checkout.");
-            System.out.println("0. Cancel keyboard");
+            System.out.println("0. Cancel ");
             String choice = keyboard.nextLine();
             switch (choice) {
                 case "1":
@@ -468,7 +468,7 @@ class OrderMenu {
                 }
             }
 
-            System.out.printf("Total Price: $ %.2f", customerOrder.total);
+            System.out.printf("Total Price: $ %.2f", customerOrder.getTotal());
             System.out.println();
             //Here's where the total price will be displayed
             System.out.println("Thank you for coming in! Now get out. There's a fee if you stand around.");
