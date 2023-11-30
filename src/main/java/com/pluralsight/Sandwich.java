@@ -33,7 +33,6 @@ public class Sandwich {
     }
 
 
-
     public Sandwich(int size, String bread, boolean isToasted) {
         this.size = size;
         this.bread = bread;
@@ -51,7 +50,6 @@ public class Sandwich {
         setMeatPrice();
     }
 
-   //
 
     public int getSize() {
         return size;
@@ -84,7 +82,6 @@ public class Sandwich {
         }
     }
 
-   //
 
     public void setMeatPrice() {
         if (this.size == 4) {
@@ -110,7 +107,6 @@ public class Sandwich {
         }
     }
 
- //
 
     public void extraCheese() {
         this.isExtraCheese = true;
@@ -123,8 +119,6 @@ public class Sandwich {
         }
     }
 
-   //
-
     public void setCheesePrice() {
         if (this.size == 4) {
             this.cheesePrice = .75;
@@ -134,8 +128,6 @@ public class Sandwich {
             cheesePrice = 2.25;
         }
     }
-
- //
     public void addCheesePrice() {
         totalPrice += cheesePrice;
     }
@@ -186,8 +178,6 @@ public class Sandwich {
         return builder.toString();
     }
 
-  //
-
     public String displaySauce(){
         StringBuilder builder = new StringBuilder();
         if(!sauceToppings.isEmpty()) {
@@ -206,7 +196,6 @@ public class Sandwich {
         if(!sideToppings.isEmpty()) {
             for (String side : sideToppings) {
                 builder.append(side + " ");
-
             }
         }
         else{
@@ -214,9 +203,6 @@ public class Sandwich {
         }
         return builder.toString();
     }
-
-
- //
 
     public void setSandwichPrice(double price){
         this.totalPrice = price;

@@ -59,7 +59,7 @@ class OrderMenu {
                     System.out.println("2. Custom.");
                     int order = keyboard.nextInt();
                     int counter = 1;
-                    if (order == 1) { //display custom sandwiches
+                    if (order == 1) {
                         SignatureSandwich signatureSandwich = new SignatureSandwich();
                         //Display signature sandwiches
                         for (Sandwich sandwich : signatureSandwich.signatureSandwiches) {
@@ -152,7 +152,6 @@ class OrderMenu {
                         userSauces(keyboard, sauceToppings, sandwich);
                         userSide(keyboard, sideToppings, sandwich);
 
-                        //test output
                         addAndDisplaySandwich(sandwich);
                     }
 
@@ -464,17 +463,10 @@ class OrderMenu {
                     System.out.print(sandwiches.sideToppings + " ");
                 }
 
-
-                //test price output
-
-
-
                 for (Sandwich sandwichess : customerOrder.sandwiches) {
                     sandwichess.getTotalPrice();
                 }
             }
-
-
 
             System.out.printf("Total Price: $ %.2f", customerOrder.total);
             System.out.println();
