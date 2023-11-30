@@ -42,8 +42,11 @@ This is the receipt
 
 
 
+<img width="366" alt="Screenshot 2023-11-30 at 1 18 01 PM" src="https://github.com/AlexNikitin0/DELI-cious/assets/113218888/8bfbfb9a-fa5e-44dc-bcd2-cdca470ac83d">
 
 
 
 
-<img width="367" alt="Screenshot 2023-11-30 at 12 57 12 PM" src="https://github.com/AlexNikitin0/DELI-cious/assets/113218888/956955b2-d595-4e17-8693-44f0cbc5b7d4">
+
+
+
