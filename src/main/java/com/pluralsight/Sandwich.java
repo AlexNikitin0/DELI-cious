@@ -1,11 +1,7 @@
 package com.pluralsight;
 import java.util.ArrayList;
 public class Sandwich {
-    ArrayList<String> meatToppings;
-    ArrayList<String> cheeseToppings;
-    ArrayList<String> vegetableToppings;
-    ArrayList<String> sideToppings;
-    ArrayList<String> sauceToppings;
+    ArrayList<String> meatToppings, cheeseToppings, vegetableToppings ,sideToppings , sauceToppings;
 
     private String description;
 

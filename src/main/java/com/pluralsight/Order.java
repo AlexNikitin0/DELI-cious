@@ -6,8 +6,7 @@ import java.util.ArrayList;
 public class Order {
     private double total;
     ArrayList<Sandwich> sandwiches;
-    ArrayList<String> drinks;
-    ArrayList<String> chips;
+    ArrayList<String> drinks, chips;
 
     ArrayList<SignatureSandwich> signatureSandwiches;
     public Order() {
@@ -30,7 +29,7 @@ public class Order {
         this.total += amount;
     }
     public void setSandwichPrices(){
-        for(Sandwich sandwich: sandwiches){
+        for(Sandwich sandwich : sandwiches){
             this.total += sandwich.getTotalPrice();
         }
     }
